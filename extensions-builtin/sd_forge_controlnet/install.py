@@ -13,7 +13,7 @@ main_req_file = repo_root / "requirements.txt"
 
 
 def comparable_version(version: str) -> Tuple:
-    return tuple(version.split("."))
+    return tuple(int(part) for part in version.split('.'))
 
 
 def get_installed_version(package: str) -> Optional[str]:

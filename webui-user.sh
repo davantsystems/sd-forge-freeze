@@ -10,7 +10,22 @@
 #clone_dir="stable-diffusion-webui"
 
 # Commandline arguments for webui.py, for example: export COMMANDLINE_ARGS="--medvram --opt-split-attention"
-export COMMANDLINE_ARGS="--api --listen --skip-torch-cuda-test --use-cpu interrogate"
+# Reference: https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Command-Line-Arguments-and-Settings
+
+# --api | Enables API
+# --listen | Enables listening for remote connections
+# --skip-torch-cuda-test | Skips Torch's CUDA test as no NVIDIA GPU is available
+# --use-cpu interrogate | Use CPU for interrogation (options: all, sd, interrogate, gfpgan, bsrgan, esrgan, scunet, codeformer)
+# --skip-version-check | Torch version intentionally doesn't match, skip version check
+# --no-hashing | Disable SHA-256 hashing of checkpoints to help loading performance
+
+export COMMANDLINE_ARGS="\
+--api \
+--listen \
+--skip-torch-cuda-test \
+--use-cpu interrogate \
+--skip-version-check \
+--no-hashing"
 
 # python3 executable
 #python_cmd="python3"
