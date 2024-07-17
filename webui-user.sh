@@ -25,7 +25,8 @@ export COMMANDLINE_ARGS="\
 --skip-torch-cuda-test \
 --use-cpu interrogate \
 --skip-version-check \
---no-hashing"
+--no-hashing \
+--ui-settings-file config-custom.json"
 
 # python3 executable
 #python_cmd="python3"
