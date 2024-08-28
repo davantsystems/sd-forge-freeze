@@ -7,26 +7,36 @@
 #install_dir="/home/$(whoami)"
 
 # Name of the subdirectory
-#clone_dir="stable-diffusion-webui"
+clone_dir="davant-forge"
 
 # Commandline arguments for webui.py, for example: export COMMANDLINE_ARGS="--medvram --opt-split-attention"
 # Reference: https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Command-Line-Arguments-and-Settings
-
 # --api | Enables API
 # --listen | Enables listening for remote connections
 # --skip-torch-cuda-test | Skips Torch's CUDA test as no NVIDIA GPU is available
 # --use-cpu interrogate | Use CPU for interrogation (options: all, sd, interrogate, gfpgan, bsrgan, esrgan, scunet, codeformer)
 # --skip-version-check | Torch version intentionally doesn't match, skip version check
 # --no-hashing | Disable SHA-256 hashing of checkpoints to help loading performance
+# --skip-python-version-check | Do not check versions of Python.
+# --no-prompt-history | Disable read prompt from last generation feature: disables --data-path/params.txt
+
+# Defaults
+# --ckpt-dir "models/Stable-diffusion"
+# --lora-dir "models/lora"
+# --embeddings-dir "embeddings"
+# --controlnet-dir "models/ControlNet"
 
 export COMMANDLINE_ARGS="\
 --api \
+--api-server-stop \
 --listen \
---skip-torch-cuda-test \
 --use-cpu interrogate \
---skip-version-check \
---no-hashing \
---ui-settings-file config-custom.json"
+--skip-torch-cuda-test \
+--ckpt-dir '../../1_StableDiffusion_models' \
+--lora-dir '../../3_LoRA' \
+--embeddings-dir '../../4_Embeddings' \
+--ui-settings-file config-custom.json \
+"
 
 # python3 executable
 #python_cmd="python3"
